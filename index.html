@@ -14,8 +14,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            color: #2c2c2c;
             font-family: 'Fredoka', sans-serif;
             line-height: 1.6;
         }
@@ -49,6 +49,12 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
         }
         
         /* Header Section */
@@ -164,9 +170,15 @@
         
         .picks-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 20px;
+        }
+        
+        @media (max-width: 650px) {
+            .picks-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .pick-category {
@@ -185,28 +197,33 @@
         }
         
         .pick-item {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.6);
             padding: 15px;
             margin-bottom: 12px;
             border-radius: 12px;
-            border-left: 4px solid #00BFFF;
+            border-left: 4px solid #FF1493;
             transition: transform 0.3s ease, border-color 0.3s ease;
+            min-height: 70px;
         }
         
         .pick-item:hover {
             transform: translateX(10px);
-            border-color: #FFD700;
+            border-color: #9D00FF;
+        }
+        
+        .pick-item:active {
+            transform: scale(0.98);
         }
         
         .pick-name {
             font-weight: bold;
             font-size: 18px;
-            color: #FFD700;
+            color: #9D00FF;
         }
         
         .pick-desc {
             font-size: 15px;
-            color: #e0e0e0;
+            color: #2c2c2c;
             margin-top: 5px;
         }
         
@@ -236,95 +253,118 @@
             margin-top: 20px;
         }
         
+        @media (max-width: 1000px) {
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .place-card {
-            background: linear-gradient(135deg, rgba(255, 20, 147, 0.2) 0%, rgba(157, 0, 255, 0.2) 100%);
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 15px;
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(157, 0, 255, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 150px;
         }
         
         .place-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+        }
+        
+        .place-card:active {
+            transform: scale(0.98);
         }
         
         .place-name {
             font-family: 'Bebas Neue', cursive;
             font-size: 24px;
-            color: #FFD700;
+            color: #9D00FF;
             margin-bottom: 8px;
         }
         
         .place-details {
             font-size: 14px;
-            color: #00BFFF;
+            color: #0066cc;
             margin-bottom: 10px;
         }
         
         .place-time {
             font-size: 14px;
-            color: #e0e0e0;
+            color: #2c2c2c;
             margin-bottom: 8px;
         }
         
         .place-tips {
             font-size: 14px;
-            color: #cccccc;
+            color: #333333;
             font-style: italic;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.7);
             padding: 10px;
             border-radius: 8px;
-            border-left: 3px solid #39FF14;
+            border-left: 3px solid #FF1493;
             margin-top: 8px;
         }
         
         /* Food Section - Compact List Style */
         .food-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 15px;
         }
         
+        @media (max-width: 650px) {
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .food-item {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(255, 255, 255, 0.7);
             padding: 15px;
             border-radius: 12px;
             border-left: 4px solid #FF6600;
             transition: transform 0.3s ease;
+            min-height: 80px;
         }
         
         .food-item:hover {
             transform: translateX(5px);
         }
         
+        .food-item:active {
+            transform: scale(0.98);
+        }
+        
         .food-name {
             font-weight: bold;
             font-size: 18px;
-            color: #FFD700;
+            color: #9D00FF;
         }
         
         .food-info {
             font-size: 14px;
-            color: #e0e0e0;
+            color: #2c2c2c;
             margin-top: 5px;
         }
         
         .food-tip {
             font-size: 13px;
-            color: #39FF14;
+            color: #FF1493;
             font-style: italic;
             margin-top: 5px;
         }
         
         .timing-note {
-            background: rgba(0, 191, 255, 0.2);
+            background: rgba(255, 255, 255, 0.8);
             padding: 12px 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border-left: 4px solid #00BFFF;
+            border-left: 4px solid #FF1493;
             font-size: 15px;
+            color: #2c2c2c;
         }
         
         /* Print Button */
@@ -365,13 +405,35 @@
             }
         }
         
+        .place-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .food-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 48px;
+                font-size: 36px;
+                letter-spacing: 2px;
             }
             .subtitle {
-                font-size: 24px;
+                font-size: 18px;
+            }
+            .tagline {
+                font-size: 14px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .content-section h2 {
+                font-size: 26px;
             }
             .places-grid {
                 grid-template-columns: 1fr;
@@ -381,6 +443,23 @@
             }
             .food-grid {
                 grid-template-columns: 1fr;
+            }
+            .header::before,
+            .header::after {
+                font-size: 60px;
+            }
+            .header {
+                padding: 40px 15px;
+            }
+            .top-picks,
+            .content-section {
+                padding: 25px 20px;
+            }
+            .print-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 16px;
             }
         }
     </style>
@@ -401,58 +480,80 @@
             <div class="picks-grid">
                 <div class="pick-category">
                     <h3>Must-Do Experiences</h3>
-                    <div class="pick-item">
-                        <div class="pick-name">Bellagio Fountains</div>
-                        <div class="pick-desc">Free, iconic water show (after dark)</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">Fremont Street Experience</div>
-                        <div class="pick-desc">Free, electric atmosphere with Viva Vision light shows</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">Red Rock Canyon</div>
-                        <div class="pick-desc">$15, stunning natural escape from the Strip</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">Neon Museum Night Tour</div>
-                        <div class="pick-desc">$30-40, glowing vintage Vegas signs (reserve ahead)</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">High Roller at Sunset</div>
-                        <div class="pick-desc">$25-35, breathtaking 360° views (reserve ahead)</div>
-                    </div>
+                    <a href="https://www.google.com/search?q=Bellagio+Fountains+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Bellagio Fountains</div>
+                            <div class="pick-desc">📍 3600 S Las Vegas Blvd<br>Free, iconic water show (after dark)</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=Fremont+Street+Experience+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Fremont Street Experience</div>
+                            <div class="pick-desc">📍 Fremont St<br>Free, electric atmosphere with Viva Vision light shows</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=Red+Rock+Canyon+National+Conservation+Area" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Red Rock Canyon</div>
+                            <div class="pick-desc">📍 1000 Scenic Loop Dr<br>$15, stunning natural escape from the Strip</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=Neon+Museum+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Neon Museum Night Tour</div>
+                            <div class="pick-desc">📍 770 Las Vegas Blvd N<br>$30-40, glowing vintage Vegas signs (reserve ahead)</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=High+Roller+Observation+Wheel+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">High Roller at Sunset</div>
+                            <div class="pick-desc">📍 3545 S Las Vegas Blvd<br>$25-35, breathtaking 360° views (reserve ahead)</div>
+                        </div>
+                    </a>
                 </div>
                 
                 <div class="pick-category">
                     <h3>Can't-Miss Food</h3>
-                    <div class="pick-item">
-                        <div class="pick-name">Hash House A Go Go</div>
-                        <div class="pick-desc">Legendary brunch portions ($15-25)</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">Secret Pizza</div>
-                        <div class="pick-desc">Hidden gem at Cosmopolitan ($10-20)</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">Carson Kitchen</div>
-                        <div class="pick-desc">Creative downtown dining ($30-50, reserve ahead)</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">Mon Ami Gabi</div>
-                        <div class="pick-desc">Perfect Strip-view brunch ($20-40, reserve ahead)</div>
-                    </div>
+                    <a href="https://www.google.com/search?q=Hash+House+A+Go+Go+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Hash House A Go Go</div>
+                            <div class="pick-desc">📍 3535 S Las Vegas Blvd<br>Legendary brunch portions ($15-25)</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=Secret+Pizza+Cosmopolitan+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Secret Pizza</div>
+                            <div class="pick-desc">📍 3708 Las Vegas Blvd S (Cosmopolitan)<br>Hidden gem at Cosmopolitan ($10-20)</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=Carson+Kitchen+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Carson Kitchen</div>
+                            <div class="pick-desc">📍 124 S 6th St<br>Creative downtown dining ($30-50, reserve ahead)</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=Mon+Ami+Gabi+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Mon Ami Gabi</div>
+                            <div class="pick-desc">📍 3655 S Las Vegas Blvd (Paris Las Vegas)<br>Perfect Strip-view brunch ($20-40, reserve ahead)</div>
+                        </div>
+                    </a>
                 </div>
                 
                 <div class="pick-category">
                     <h3>Best Nightlife</h3>
-                    <div class="pick-item">
-                        <div class="pick-name">The Laundry Room</div>
-                        <div class="pick-desc">Secret speakeasy experience ($10-20 drinks, reservation required)</div>
-                    </div>
-                    <div class="pick-item">
-                        <div class="pick-name">Fremont Street</div>
-                        <div class="pick-desc">Free live music and people-watching</div>
-                    </div>
+                    <a href="https://www.google.com/search?q=The+Laundry+Room+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">The Laundry Room</div>
+                            <div class="pick-desc">📍 525 E Fremont St #5<br>Secret speakeasy experience ($10-20 drinks, reservation required)</div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/search?q=Fremont+Street+Las+Vegas" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="pick-item">
+                            <div class="pick-name">Fremont Street</div>
+                            <div class="pick-desc">📍 Fremont St<br>Free live music and people-watching</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -462,6 +563,7 @@
             <h2>🎭 SIGHTSEEING</h2>
             
             <div class="places-grid">
+                <a href="https://www.google.com/search?q=Bellagio+Fountains+Las+Vegas" target="_blank" class="place-link">
                 <div class="place-card">
                     <div class="place-name">Bellagio Fountains</div>
                     <div class="place-details">📍 3600 S Las Vegas Blvd | 💰 Free</div>
@@ -546,6 +648,7 @@
                     <div class="place-tips"><strong>Tips:</strong> Way cooler than daytime visits. Wear comfy shoes and bring camera. Combine with Fremont Street for full vintage Vegas night.</div>
                 </div>
             </div>
+                </a>
         </div>
         
         <!-- Breakfast Section -->
@@ -557,26 +660,34 @@
             </div>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Eggslut+Cosmopolitan+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Eggslut</div>
                     <div class="food-info">📍 3708 Las Vegas Blvd S (Cosmopolitan) | 💰 $10-15</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=The+Henry+Cosmopolitan+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">The Henry</div>
                     <div class="food-info">📍 3708 Las Vegas Blvd S (Cosmopolitan) | 💰 $15-25</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Bouchon+Bakery+Venetian+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Bouchon Bakery</div>
                     <div class="food-info">📍 3355 S Las Vegas Blvd (Venetian) | 💰 $5-15</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Blueberry+Hill+Family+Restaurant+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Blueberry Hill Family Restaurant</div>
                     <div class="food-info">📍 5200 W Craig Rd, North Las Vegas | 💰 $10-20</div>
                     <div class="food-tip">Great for classic diner breakfast or brunch any time of day.</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -589,21 +700,27 @@
             </div>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Mon+Ami+Gabi+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Mon Ami Gabi</div>
                     <div class="food-info">📍 3655 S Las Vegas Blvd (Paris Las Vegas) | 💰 $20-40 | 🎫 Reservation recommended</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=The+Buffet+at+Wynn+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">The Buffet at Wynn</div>
                     <div class="food-info">📍 3131 S Las Vegas Blvd | 💰 $40-60 | 🎫 Reservation recommended</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Hash+House+A+Go+Go+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Hash House A Go Go</div>
                     <div class="food-info">📍 3535 S Las Vegas Blvd | 💰 $15-25</div>
                     <div class="food-tip">Legendary for brunch with huge portions and creative dishes.</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -616,30 +733,40 @@
             </div>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Eatt+Gourmet+Bistro+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Eatt Gourmet Bistro</div>
                     <div class="food-info">📍 707 E Carson Ave | 💰 $15-25</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Secret+Pizza+Cosmopolitan+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Secret Pizza</div>
                     <div class="food-info">📍 3708 Las Vegas Blvd S (Cosmopolitan) | 💰 $10-20</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Le+Thai+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Le Thai</div>
                     <div class="food-info">📍 523 E Fremont St | 💰 $10-20</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Tacos+El+Pastor+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Tacos El Pastor</div>
                     <div class="food-info">📍 1201 S Las Vegas Blvd | 💰 $5-15</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Nacho+Daddy+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Nacho Daddy</div>
                     <div class="food-info">📍 507 E Fremont St | 💰 $10-20</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -652,25 +779,33 @@
             </div>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Joel+Robuchon+MGM+Grand+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Joel Robuchon</div>
                     <div class="food-info">📍 3799 Las Vegas Blvd S (MGM Grand) | 💰 $150+ per person | 🎫 Reservation essential</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Carson+Kitchen+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Carson Kitchen</div>
                     <div class="food-info">📍 124 S 6th St | 💰 $30-50 | 🎫 Reservation recommended</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Black+Tap+Burgers+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Black Tap Craft Burgers & Beer</div>
                     <div class="food-info">📍 3799 Las Vegas Blvd S (The Venetian) | 💰 $15-25</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Virgil's+Real+BBQ+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Virgil's Real BBQ</div>
                     <div class="food-info">📍 1120 S Main St | 💰 $15-30 | 🎫 Reservation recommended for dinner</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -691,20 +826,26 @@
             </div>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=The+Laundry+Room+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">The Laundry Room</div>
                     <div class="food-info">📍 525 E Fremont St #5 | 💰 $10-20 drinks | 🎫 Reservation required (secret entrance)</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=The+Underground+Speakeasy+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">The Underground Speakeasy and Distillery</div>
                     <div class="food-info">📍 4260 W Flamingo Rd | 💰 $10-20 drinks | 🎫 Reservation recommended</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Velveteen+Rabbit+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Velveteen Rabbit</div>
                     <div class="food-info">📍 1218 S Main St | 💰 $10-20 drinks | 🎫 Reservation recommended</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -717,20 +858,26 @@
             </div>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Ellis+Island+Karaoke+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Ellis Island Karaoke</div>
                     <div class="food-info">📍 4178 Koval Ln | 💰 $10-20 cover</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Dino's+Lounge+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Dino's Lounge</div>
                     <div class="food-info">📍 1600 E Flamingo Rd | 💰 $10-20 cover</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=The+Smashed+Pig+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">The Smashed Pig</div>
                     <div class="food-info">📍 5175 S Fort Apache Rd | 💰 $10-20 cover</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -739,20 +886,26 @@
             <h2>🛍️ SHOPPING</h2>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Fashion+Show+Mall+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Fashion Show Mall</div>
                     <div class="food-info">📍 3200 S Las Vegas Blvd | 💰 Free entry</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Downtown+Container+Park+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Downtown Container Park</div>
                     <div class="food-info">📍 707 Fremont St | 💰 Free entry</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=The+Forum+Shops+at+Caesars+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">The Forum Shops at Caesars</div>
                     <div class="food-info">📍 3500 S Las Vegas Blvd | 💰 Free entry</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -761,20 +914,26 @@
             <h2>🌿 MARIJUANA DISPENSARIES</h2>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Nevada+Made+Marijuana+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Nevada Made Marijuana</div>
                     <div class="food-info">📍 4200 W Flamingo Rd | 💰 Varies</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Planet+13+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Planet 13</div>
                     <div class="food-info">📍 2548 W Desert Inn Rd | 💰 Varies</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Reef+Dispensaries+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Reef Dispensaries</div>
                     <div class="food-info">📍 Multiple locations (e.g., 3500 S Maryland Pkwy) | 💰 Varies</div>
                 </div>
+                </a>
             </div>
         </div>
         
@@ -783,21 +942,27 @@
             <h2>🎁 SOUVENIRS</h2>
             
             <div class="food-grid">
+                <a href="https://www.google.com/search?q=Bonanza+Gift+Shop+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Bonanza Gift Shop</div>
                     <div class="food-info">📍 5200 Las Vegas Blvd S | 💰 Varies</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Downtown+Container+Park+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">Downtown Container Park</div>
                     <div class="food-info">📍 707 Fremont St | 💰 Varies</div>
                     <div class="food-tip">Local artisan goods</div>
                 </div>
+                </a>
                 
+                <a href="https://www.google.com/search?q=Neon+Museum+Gift+Shop+Las+Vegas" target="_blank" class="food-link">
                 <div class="food-item">
                     <div class="food-name">The Neon Museum Gift Shop</div>
                     <div class="food-info">📍 770 Las Vegas Blvd N | 💰 Varies</div>
                 </div>
+                </a>
             </div>
         </div>
     </div>
