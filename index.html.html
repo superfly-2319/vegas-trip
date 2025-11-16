@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegas Baby! 🎰 Your Epic First Trip Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Righteous&family=Archivo+Black&family=Pacifico&family=Permanent+Marker&family=Fredoka:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
+            color: #ffffff;
+            font-family: 'Fredoka', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Animated background stars */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, white, transparent);
+            background-size: 200% 200%;
+            animation: twinkle 3s ease-in-out infinite;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(45deg, #FF1493, #FFD700, #00BFFF, #9D00FF);
+            background-size: 300% 300%;
+            animation: gradient 5s ease infinite;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 50px rgba(255, 20, 147, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .header::before {
+            content: "✨";
+            position: absolute;
+            font-size: 100px;
+            top: 10px;
+            left: 50px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .header::after {
+            content: "🎰";
+            position: absolute;
+            font-size: 100px;
+            bottom: 10px;
+            right: 50px;
+            animation: float 3s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        h1 {
+            font-family: 'Righteous', cursive;
+            font-size: 72px;
+            margin: 0;
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 30px #FF1493,
+                0 0 40px #FF1493;
+            animation: neon-glow 1.5s ease-in-out infinite alternate;
+            letter-spacing: 5px;
+        }
+        
+        @keyframes neon-glow {
+            from {
+                text-shadow: 
+                    0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px #FF1493,
+                    0 0 40px #FF1493;
+            }
+            to {
+                text-shadow: 
+                    0 0 20px #fff,
+                    0 0 30px #FFD700,
+                    0 0 40px #FFD700,
+                    0 0 50px #FFD700,
+                    0 0 60px #FFD700;
+            }
+        }
+        
+        .subtitle {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 32px;
+            margin-top: 10px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+        }
+        
+        .tagline {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 20px;
+            margin-top: 15px;
+            color: #00BFFF;
+            transform: rotate(-2deg);
+        }
+        
+        /* Top Picks Section */
+        .top-picks {
+            background: linear-gradient(135deg, #FF1493 0%, #9D00FF 100%);
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(157, 0, 255, 0.4);
+            border: 3px solid #FFD700;
+        }
+        
+        .section-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #FFD700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            letter-spacing: 2px;
+        }
+        
+        .picks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .pick-category {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .pick-category h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        
+        .pick-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border-left: 4px solid #00BFFF;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .pick-item:hover {
+            transform: translateX(10px);
+            border-color: #FFD700;
+        }
+        
+        .pick-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #FFD700;
+        }
+        
+        .pick-desc {
+            font-size: 15px;
+            color: #e0e0e0;
+            margin-top: 5px;
+        }
+        
+        /* Main Content Area */
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .content-section h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 38px;
+            color: #FF1493;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Two Column Layout for places */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .place-card {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.2) 0%, rgba(157, 0, 255, 0.2) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .place-name {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 24px;
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+        
+        .place-details {
+            font-size: 14px;
+            color: #00BFFF;
+            margin-bottom: 10px;
+        }
+        
+        .place-time {
+            font-size: 14px;
+            color: #e0e0e0;
+            margin-bottom: 8px;
+        }
+        
+        .place-tips {
+            font-size: 14px;
+            color: #cccccc;
+            font-style: italic;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #39FF14;
+            margin-top: 8px;
+        }
+        
+        /* Food Section - Compact List Style */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .food-item {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #FF6600;
+            transition: transform 0.3s ease;
+        }
+        
+        .food-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .food-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #FFD700;
+        }
+        
+        .food-info {
+            font-size: 14px;
+            color: #e0e0e0;
+            margin-top: 5px;
+        }
+        
+        .food-tip {
+            font-size: 13px;
+            color: #39FF14;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .timing-note {
+            background: rgba(0, 191, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00BFFF;
+            font-size: 15px;
+        }
+        
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #FF1493, #9D00FF);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: 'Bebas Neue', cursive;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.5);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .print-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            .header {
+                background: linear-gradient(45deg, #FF1493, #FFD700);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .print-button {
+                display: none;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 48px;
+            }
+            .subtitle {
+                font-size: 24px;
+            }
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+            .picks-grid {
+                grid-template-columns: 1fr;
+            }
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>✨ VEGAS BABY! ✨</h1>
+            <div class="subtitle">YOUR EPIC FIRST TRIP GUIDE</div>
+            <div class="tagline">What Happens in Vegas... Gets Documented in This Guide! 🎉</div>
+        </div>
+        
+        <!-- Top Picks Section -->
+        <div class="top-picks">
+            <div class="section-title">🌟 TOP PICKS 🌟</div>
+            
+            <div class="picks-grid">
+                <div class="pick-category">
+                    <h3>Must-Do Experiences</h3>
+                    <div class="pick-item">
+                        <div class="pick-name">Bellagio Fountains</div>
+                        <div class="pick-desc">Free, iconic water show (after dark)</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">Fremont Street Experience</div>
+                        <div class="pick-desc">Free, electric atmosphere with Viva Vision light shows</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">Red Rock Canyon</div>
+                        <div class="pick-desc">$15, stunning natural escape from the Strip</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">Neon Museum Night Tour</div>
+                        <div class="pick-desc">$30-40, glowing vintage Vegas signs (reserve ahead)</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">High Roller at Sunset</div>
+                        <div class="pick-desc">$25-35, breathtaking 360° views (reserve ahead)</div>
+                    </div>
+                </div>
+                
+                <div class="pick-category">
+                    <h3>Can't-Miss Food</h3>
+                    <div class="pick-item">
+                        <div class="pick-name">Hash House A Go Go</div>
+                        <div class="pick-desc">Legendary brunch portions ($15-25)</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">Secret Pizza</div>
+                        <div class="pick-desc">Hidden gem at Cosmopolitan ($10-20)</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">Carson Kitchen</div>
+                        <div class="pick-desc">Creative downtown dining ($30-50, reserve ahead)</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">Mon Ami Gabi</div>
+                        <div class="pick-desc">Perfect Strip-view brunch ($20-40, reserve ahead)</div>
+                    </div>
+                </div>
+                
+                <div class="pick-category">
+                    <h3>Best Nightlife</h3>
+                    <div class="pick-item">
+                        <div class="pick-name">The Laundry Room</div>
+                        <div class="pick-desc">Secret speakeasy experience ($10-20 drinks, reservation required)</div>
+                    </div>
+                    <div class="pick-item">
+                        <div class="pick-name">Fremont Street</div>
+                        <div class="pick-desc">Free live music and people-watching</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sightseeing Section -->
+        <div class="content-section">
+            <h2>🎭 SIGHTSEEING</h2>
+            
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="place-name">Bellagio Fountains</div>
+                    <div class="place-details">📍 3600 S Las Vegas Blvd | 💰 Free</div>
+                    <div class="place-time"><strong>Best Time:</strong> After dark, shows every 15-30 min (3 PM-midnight)</div>
+                    <div class="place-tips"><strong>Tips:</strong> Each show is slightly different - catch multiple! Combine with Bellagio Conservatory & Botanical Gardens. Arrive 10-15 min early for good viewing spots.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Fremont Street Experience</div>
+                    <div class="place-details">📍 Fremont St | 💰 Free</div>
+                    <div class="place-time"><strong>Best Time:</strong> Evening/night for Viva Vision light shows (starts at dusk)</div>
+                    <div class="place-tips"><strong>Tips:</strong> Weekdays less crowded. Try the zipline for adrenaline rush. Explore Downtown Container Park nearby for food and shopping.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Red Rock Canyon National Conservation Area</div>
+                    <div class="place-details">📍 1000 Scenic Loop Dr | 💰 $15 per vehicle | 🎫 Check for guided tours</div>
+                    <div class="place-time"><strong>Best Time:</strong> Early morning (sunrise-9 AM) or late afternoon (after 3 PM) to avoid heat/crowds</div>
+                    <div class="place-tips"><strong>Tips:</strong> Bring water and sunscreen. Great for hiking, photography, and desert wildlife spotting. Pack snacks for a scenic picnic.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Seven Magic Mountains</div>
+                    <div class="place-details">📍 Las Vegas Blvd S, Jean | 💰 Free</div>
+                    <div class="place-time"><strong>Best Time:</strong> Late afternoon to sunset for best lighting and photos</div>
+                    <div class="place-tips"><strong>Tips:</strong> Quick stop - combine with other desert trips. Perfect for colorful, surreal photo op.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Neon Museum</div>
+                    <div class="place-details">📍 770 Las Vegas Blvd N | 💰 $20-30 | 🎫 Reservation recommended</div>
+                    <div class="place-time"><strong>Best Time:</strong> Night tours for glowing signs</div>
+                    <div class="place-tips"><strong>Tips:</strong> Day tours available but less magical. Bring camera with low-light capability. Combine with Fremont Street for full vintage Vegas night.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Eiffel Tower Viewing Deck</div>
+                    <div class="place-details">📍 3655 S Las Vegas Blvd (Paris Las Vegas) | 💰 $20-25 | 🎫 Reservation recommended</div>
+                    <div class="place-time"><strong>Best Time:</strong> Sunset or night for stunning views</div>
+                    <div class="place-tips"><strong>Tips:</strong> Sunset slots book fast - reserve ahead. Night rides offer dazzling Strip views with neon lights.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Venetian's Grand Canal Shoppes & Gondola Ride</div>
+                    <div class="place-details">📍 3355 S Las Vegas Blvd | 💰 $30-40 per person | 🎫 Reservation recommended</div>
+                    <div class="place-time"><strong>Best Time:</strong> Early morning or late evening to avoid crowds</div>
+                    <div class="place-tips"><strong>Tips:</strong> Evening rides more romantic and less crowded. Ask gondolier to sing - cheesy but charming! Combine with window shopping or quick bite.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">High Roller Observation Wheel</div>
+                    <div class="place-details">📍 3545 S Las Vegas Blvd | 💰 $25-35 | 🎫 Reservation recommended</div>
+                    <div class="place-time"><strong>Best Time:</strong> Sunset or night for best views and atmosphere</div>
+                    <div class="place-tips"><strong>Tips:</strong> Sunset rides book fast. Book "Happy Half Hour" cabin with open bar for boozy spin. Night rides offer dazzling Strip views.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Mirage Volcano Show</div>
+                    <div class="place-details">📍 3400 S Las Vegas Blvd | 💰 Free</div>
+                    <div class="place-time"><strong>Best Time:</strong> Every hour after dark (usually 7 PM-11 PM)</div>
+                    <div class="place-tips"><strong>Tips:</strong> Arrive early for front-row sidewalk spots. Free, so catch it multiple times! Combine with Secret Garden & Dolphin Habitat for daytime activity.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Mob Museum</div>
+                    <div class="place-details">📍 300 Stewart Ave | 💰 $30 | 🎫 Reservation recommended</div>
+                    <div class="place-time"><strong>Best Time:</strong> Mid-morning to early afternoon to avoid crowds</div>
+                    <div class="place-tips"><strong>Tips:</strong> Buy tickets online to skip line. Don't miss interactive crime lab and speakeasy bar downstairs. Allocate 2-3 hours.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Cirque du Soleil Shows (e.g., "O," "Mystère")</div>
+                    <div class="place-details">💰 $70-150+ | 🎫 Reservation essential</div>
+                    <div class="place-time"><strong>Best Time:</strong> Evening shows, typically 7-8 PM start</div>
+                    <div class="place-tips"><strong>Tips:</strong> Check for last-minute deals or weekday discounts. Arrive early to explore venue and grab drinks. "Mystère" at Treasure Island is classic and slightly shorter.</div>
+                </div>
+                
+                <div class="place-card">
+                    <div class="place-name">Neon Boneyard Night Tour</div>
+                    <div class="place-details">📍 770 Las Vegas Blvd N | 💰 $30-40 | 🎫 Reservation required</div>
+                    <div class="place-time"><strong>Best Time:</strong> Night tours only</div>
+                    <div class="place-tips"><strong>Tips:</strong> Way cooler than daytime visits. Wear comfy shoes and bring camera. Combine with Fremont Street for full vintage Vegas night.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Breakfast Section -->
+        <div class="content-section">
+            <h2>🍳 BREAKFAST</h2>
+            <div class="timing-note">
+                <strong>Best Time:</strong> 7-10 AM to avoid brunch rush<br>
+                <strong>Tip:</strong> Popular spots like Eggslut and Hash House get busy by 9 AM - early bird gets the table!
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Eggslut</div>
+                    <div class="food-info">📍 3708 Las Vegas Blvd S (Cosmopolitan) | 💰 $10-15</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">The Henry</div>
+                    <div class="food-info">📍 3708 Las Vegas Blvd S (Cosmopolitan) | 💰 $15-25</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Bouchon Bakery</div>
+                    <div class="food-info">📍 3355 S Las Vegas Blvd (Venetian) | 💰 $5-15</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Blueberry Hill Family Restaurant</div>
+                    <div class="food-info">📍 5200 W Craig Rd, North Las Vegas | 💰 $10-20</div>
+                    <div class="food-tip">Great for classic diner breakfast or brunch any time of day.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Brunch Section -->
+        <div class="content-section">
+            <h2>🥞 BRUNCH</h2>
+            <div class="timing-note">
+                <strong>Best Time:</strong> 10 AM-2 PM (weekends especially busy)<br>
+                <strong>Tip:</strong> Make reservations for Mon Ami Gabi and The Buffet at Wynn on weekends
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Mon Ami Gabi</div>
+                    <div class="food-info">📍 3655 S Las Vegas Blvd (Paris Las Vegas) | 💰 $20-40 | 🎫 Reservation recommended</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">The Buffet at Wynn</div>
+                    <div class="food-info">📍 3131 S Las Vegas Blvd | 💰 $40-60 | 🎫 Reservation recommended</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Hash House A Go Go</div>
+                    <div class="food-info">📍 3535 S Las Vegas Blvd | 💰 $15-25</div>
+                    <div class="food-tip">Legendary for brunch with huge portions and creative dishes.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lunch Section -->
+        <div class="content-section">
+            <h2>🍕 LUNCH</h2>
+            <div class="timing-note">
+                <strong>Best Time:</strong> 11:30 AM-1:30 PM<br>
+                <strong>Tip:</strong> Secret Pizza and casual spots usually walk-in friendly anytime
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Eatt Gourmet Bistro</div>
+                    <div class="food-info">📍 707 E Carson Ave | 💰 $15-25</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Secret Pizza</div>
+                    <div class="food-info">📍 3708 Las Vegas Blvd S (Cosmopolitan) | 💰 $10-20</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Le Thai</div>
+                    <div class="food-info">📍 523 E Fremont St | 💰 $10-20</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Tacos El Pastor</div>
+                    <div class="food-info">📍 1201 S Las Vegas Blvd | 💰 $5-15</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Nacho Daddy</div>
+                    <div class="food-info">📍 507 E Fremont St | 💰 $10-20</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dinner Section -->
+        <div class="content-section">
+            <h2>🍽️ DINNER</h2>
+            <div class="timing-note">
+                <strong>Best Time:</strong> 6-8 PM for prime dining<br>
+                <strong>Tip:</strong> High-end places like Joel Robuchon require advance reservations. Late dinners (after 9 PM) common in Vegas - go late for quieter meals.
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Joel Robuchon</div>
+                    <div class="food-info">📍 3799 Las Vegas Blvd S (MGM Grand) | 💰 $150+ per person | 🎫 Reservation essential</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Carson Kitchen</div>
+                    <div class="food-info">📍 124 S 6th St | 💰 $30-50 | 🎫 Reservation recommended</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Black Tap Craft Burgers & Beer</div>
+                    <div class="food-info">📍 3799 Las Vegas Blvd S (The Venetian) | 💰 $15-25</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Virgil's Real BBQ</div>
+                    <div class="food-info">📍 1120 S Main St | 💰 $15-30 | 🎫 Reservation recommended for dinner</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bars & Nightlife Section -->
+        <div class="content-section">
+            <h2>🍸 BARS & NIGHTLIFE</h2>
+            
+            <h3 style="color: #9D00FF; font-size: 28px; margin-bottom: 15px; font-family: 'Bebas Neue', cursive;">Clubs and Dancing</h3>
+            <div class="timing-note">
+                <strong>Best Time:</strong> 10 PM-2 AM (peak around midnight)<br>
+                <strong>Tips:</strong> Arrive before 11 PM to avoid long lines and cover charges. Weekdays less crowded, weekends party central.
+            </div>
+            
+            <h3 style="color: #9D00FF; font-size: 28px; margin-bottom: 15px; margin-top: 25px; font-family: 'Bebas Neue', cursive;">Bars and Lounges</h3>
+            <div class="timing-note">
+                <strong>Best Time:</strong> 7 PM-Midnight for best vibe and happy hours<br>
+                <strong>Tip:</strong> Speakeasies require reservations and have limited capacity
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">The Laundry Room</div>
+                    <div class="food-info">📍 525 E Fremont St #5 | 💰 $10-20 drinks | 🎫 Reservation required (secret entrance)</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">The Underground Speakeasy and Distillery</div>
+                    <div class="food-info">📍 4260 W Flamingo Rd | 💰 $10-20 drinks | 🎫 Reservation recommended</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Velveteen Rabbit</div>
+                    <div class="food-info">📍 1218 S Main St | 💰 $10-20 drinks | 🎫 Reservation recommended</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Karaoke Section -->
+        <div class="content-section">
+            <h2>🎤 KARAOKE</h2>
+            <div class="timing-note">
+                <strong>Best Time:</strong> 8 PM-1 AM (weekends busier)<br>
+                <strong>Tip:</strong> Some places have happy hour specials earlier in evening
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Ellis Island Karaoke</div>
+                    <div class="food-info">📍 4178 Koval Ln | 💰 $10-20 cover</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Dino's Lounge</div>
+                    <div class="food-info">📍 1600 E Flamingo Rd | 💰 $10-20 cover</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">The Smashed Pig</div>
+                    <div class="food-info">📍 5175 S Fort Apache Rd | 💰 $10-20 cover</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Shopping Section -->
+        <div class="content-section">
+            <h2>🛍️ SHOPPING</h2>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Fashion Show Mall</div>
+                    <div class="food-info">📍 3200 S Las Vegas Blvd | 💰 Free entry</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Downtown Container Park</div>
+                    <div class="food-info">📍 707 Fremont St | 💰 Free entry</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">The Forum Shops at Caesars</div>
+                    <div class="food-info">📍 3500 S Las Vegas Blvd | 💰 Free entry</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Marijuana Dispensaries Section -->
+        <div class="content-section">
+            <h2>🌿 MARIJUANA DISPENSARIES</h2>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Nevada Made Marijuana</div>
+                    <div class="food-info">📍 4200 W Flamingo Rd | 💰 Varies</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Planet 13</div>
+                    <div class="food-info">📍 2548 W Desert Inn Rd | 💰 Varies</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Reef Dispensaries</div>
+                    <div class="food-info">📍 Multiple locations (e.g., 3500 S Maryland Pkwy) | 💰 Varies</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Souvenirs Section -->
+        <div class="content-section">
+            <h2>🎁 SOUVENIRS</h2>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-name">Bonanza Gift Shop</div>
+                    <div class="food-info">📍 5200 Las Vegas Blvd S | 💰 Varies</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">Downtown Container Park</div>
+                    <div class="food-info">📍 707 Fremont St | 💰 Varies</div>
+                    <div class="food-tip">Local artisan goods</div>
+                </div>
+                
+                <div class="food-item">
+                    <div class="food-name">The Neon Museum Gift Shop</div>
+                    <div class="food-info">📍 770 Las Vegas Blvd N | 💰 Varies</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Print Button -->
+    <button class="print-button" onclick="window.print()">🖨️ PRINT GUIDE</button>
+    
+    <script>
+        // Add some fun interactive effects
+        document.querySelectorAll('.place-card, .food-item, .pick-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
